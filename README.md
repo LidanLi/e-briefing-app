@@ -1,6 +1,6 @@
 # E-Briefing Mobile App
 
-[Ionic](https://ionicframework.com/framework) based mobile client for the [E-Briefing Service](https://github.com/cds-snc/e-briefing-service).
+[Ionic](https://ionicframework.com/framework) based mobile client for the [E-Weekly Service](https://github.com/csps-efpc-it/eWeekly-service).
 
 
 ## Update
