@@ -4,15 +4,17 @@ import 'rxjs/add/operator/map';
 import {Platform} from "ionic-angular";
 import {File} from "@ionic-native/file";
 
+
 @Injectable()
 export class GlobalsProvider {
 
   dataDirectory: string = '';
-  api_key: string = '';
-  trip_id: string = '';
+  api_key: string = 'fCzF9UKa4qo8AhitH0zTfcB5RQaHUi3Yk47nGExqpKK9kWP6Jyoe7tvrFafQ';
+  trip_id: string = '1';
   api_url: string = 'https://ebrief.csps-efpc.net/api';
   list: any;
   trip_owner: string = '';
+  win: any = window;
 
   constructor(public http: Http, private platform: Platform, private file: File) {
     this.list = null;
@@ -26,7 +28,9 @@ export class GlobalsProvider {
       }
       // if we're on a device, use the app-writable data directory
       if (!this.platform.is('core')) {
-        this.setDataDirectory(this.file.dataDirectory ? this.file.dataDirectory : '');
+        //this.setDataDirectory(this.win.WKWebView.convertFilePath(this.file.dataDirectory) ? this.win.WKWebView.convertFilePath(this.file.dataDirectory) : '');
+        this.setDataDirectory(this.file.tempDirectory ? this.file.tempDirectory : '');
+        console.log('DEBUG path: ' +  this.file.tempDirectory);
       }
     });
   }

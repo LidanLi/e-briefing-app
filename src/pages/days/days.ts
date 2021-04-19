@@ -5,6 +5,7 @@ import {TripProvider} from "@providers/trip/trip";
 import {DayPage} from '@pages/day/day';
 import {SyncPage} from "@pages/sync/sync";
 
+
 @Component({
     selector: 'page-days',
     templateUrl: 'days.html'
@@ -21,6 +22,7 @@ export class DaysPage {
             this.loadDays();
             this.loadTrip();
         });
+
     }
 
     loadDays() {
@@ -28,10 +30,11 @@ export class DaysPage {
             .then(data => {
                 this.days = data;
             });
+
     }
 
     loadTrip() {
-        this.tripProvider.get() 
+        this.tripProvider.get()
             .then (data => {
                 this.trip = data;
             });
@@ -47,5 +50,8 @@ export class DaysPage {
         this.navCtrl.push(SyncPage);
     }
 
+      refreshPage() {
+        window.location.reload();
+      }
 
 }

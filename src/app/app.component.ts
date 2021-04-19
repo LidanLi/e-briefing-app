@@ -27,6 +27,8 @@ export class MyApp {
     }
 
     checkDataExists() {
+
+      //console.log("debug: data directory +" + this.globals.dataDirectory + 'data/trip.json');
         if (!this.platform.is('core')) {
             this.file.checkFile(this.globals.dataDirectory, 'data/trip.json').then(dir =>
                 this.rootPage = TabsPage
